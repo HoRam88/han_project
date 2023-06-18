@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Enter Signgu Name</title>
+</head>
+<body>
+    <h1>Enter Signgu Name, indsLclsCd, and WorkCode</h1>
+    <form action="/result" method="POST">
+        <input type="text" name="signgu_name" placeholder="Signgu Name">
+        <br>
+        <label>
+            <input type="radio" name="indsLclsCd" value="indsLcls">
+            Large
+        </label>
+        <br>
+        <label>
+            <input type="radio" name="indsLclsCd" value="indsMcls">
+            Medium
+        </label>
+        <br>
+        <label>
+            <input type="radio" name="indsLclsCd" value="indsScls">
+            Small
+        </label>
+        <br>
+        <input type="text" name="WorkCode" placeholder="WorkCode">
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
+

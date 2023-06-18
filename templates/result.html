@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+    <style>
+        .result-table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .result-table th, .result-table td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        .result-table th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Result for {{ signgu_name }} and {{ indsLclsCd }}</h1>
+
+    <h2>Count Result</h2>
+    {{ result_table | safe }}
+
+    <h2>Bar Chart</h2>
+    <div>
+        {{ bar_chart | safe }}
+    </div>
+
+    <h2>Pie Chart</h2>
+    <div>
+        {{ pie_chart | safe }}
+    </div>
+
+    <a href="/">Go back to enter another signgu name and KSI code</a>
+</body>
+</html>
+
