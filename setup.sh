@@ -12,6 +12,8 @@ sudo pip3 install Flask boto3 matplotlib pandas requests
 # AWS ACCESS KEY 환경변수 설정
 echo "export AWS_ACCESS_KEY_ID='AWS_ACCESS_KEY_ID'" >> ~/.bashrc
 echo "export AWS_SECRET_ACCESS_KEY='AWS_SECRET_ACCESS_KEY'" >> ~/.bashrc
+echo "export MY_API_KEY='MY_API_KEY'" >> ~/.bashrc
+
 source ~/.bashrc
 
 # Flask 앱 실행
