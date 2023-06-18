@@ -4,10 +4,14 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import io
 import base64
+import os
 
 
 def get_store_list_in_dong(signgu_code, workCode):
-    key = 'ziPMmWty9CCA45LDM9%2BYSs3xjJx28Y3%2BW6RYoB3RjpexDNO%2BX70d8HlxcQ1QvI8vQtV8pZbWa3%2B7mrE7%2BAQkkA%3D%3D'
+    key = os.getenv('MY_API_KEY')  # Assuming 'MY_API_KEY' is the environment variable where your key is stored
+    if not key:
+        raise ValueError("Missing API key. Set the environment variable 'MY_API_KEY'.")
+        
     divId = "signguCd"  # 시군구 코드
     url = f"http://apis.data.go.kr/B553077/api/open/sdsc2/storeListInDong?type=json&serviceKey={key}&key={signgu_code}&divId={divId}"
 
@@ -76,7 +80,6 @@ def plot_bar_chart(json_data, countColumn):
     plt.ylabel('Count')
     plt.title('Frequency of ' + countColumn + 'Cd')
     plt.xticks(rotation=45)
-    plt.tight_layout()
 
     img_data = io.BytesIO()
     plt.savefig(img_data, format='png')
